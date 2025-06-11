@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="jakarta.faces.core">
+<h:head>
+    <title>Registro de Usuario</title>
+</h:head>
+<h:body style="background-color:#f0f0f0">
+    <h:form>
+        <p:panel header="Crear Usuario" style="width: 400px; margin: 100px auto; padding: 20px;">
+            <p:messages closable="true" />
+
+            <p:outputLabel for="nombre" value="Nombre de Usuario:" />
+            <p:inputText id="nombre" value="#{usuarioBean.usuario.nombreUsuario}" required="true" style="width: 100%;" />
+
+            <p:outputLabel for="email" value="Email:" />
+            <p:inputText id="email" value="#{usuarioBean.usuario.email}" required="true" style="width: 100%;" />
+
+            <p:outputLabel for="contrasena" value="Contraseña:" />
+            <p:password id="contrasena" value="#{usuarioBean.usuario.contrasena}" required="true" style="width: 100%;" />
+
+            <p:outputLabel for="rol" value="Rol (1=Admin, 2=Soporte, 3=Cliente):" />
+            <p:inputText id="rol" value="#{usuarioBean.usuario.rolId}" required="true" style="width: 100%;" />
+
+            <p:separator />
+            <p:commandButton value="Registrar" action="#{usuarioBean.registrar}" update="@form" icon="pi pi-save" style="width: 100%;" />
+        </p:panel>
+    </h:form>
+</h:body>
+</html>
