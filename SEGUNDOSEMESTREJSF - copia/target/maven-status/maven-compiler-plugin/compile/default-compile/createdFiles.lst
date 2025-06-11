@@ -1,5 +1,9 @@
 com\mycompany\bean\LoginBean.class
 com\mycompany\model\Usuario.class
-com\mycompany\bean\UsuarioBean.class
+com\mycompany\dao\CategoriaDAO.class
 com\mycompany\dao\UsuarioDAO.class
+com\mycompany\bean\CategoriaBean.class
+com\mycompany\bean\UsuarioBean.class
+com\mycompany\model\Categoria.class
 com\mycompany\model\Rol.class
+com\mycompany\bean\MenuBean.class

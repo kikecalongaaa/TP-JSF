@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core"
+      xmlns:p="primefaces">
+<h:head>
+    <title>Gestión de Categorías</title>
+</h:head>
+<h:body style="background-color:#f0f0f0">
+    
+    <h:form>
+        <p:panel header="Registrar Categoría" style="width: 400px; margin: 30px auto;">
+            <p:messages closable="true" />
+
+            <p:outputLabel for="nombre" value="Nombre de Categoría:" />
+            <p:inputText id="nombre" value="#{categoriaBean.categoria.nombreCategoria}" required="true" style="width: 100%;" />
+
+            <p:separator />
+            <p:commandButton value="Registrar" action="#{categoriaBean.registrar}" update="@form" icon="pi pi-save" style="width: 100%;" />
+            <p:separator/>
+            <p:commandButton value="Volver" action="#{usuarioBean.menu}" immediate="true" icon="pi pi-sign-out" style="width: 100%;" />
+        </p:panel>
+
+        <p:panel header="Lista de Categorías" style="width: 600px; margin: 50px auto;">
+            <p:dataTable value="#{categoriaBean.categorias}" var="cat" rows="10" paginator="true" paginatorPosition="bottom" style="width:100%">
+                <p:column headerText="ID">
+                    <h:outputText value="#{cat.idCategoria}" />
+                </p:column>
+                <p:column headerText="Nombre de Categoría">
+                    <h:outputText value="#{cat.nombreCategoria}" />
+                </p:column>
+                <p:column headerText="Acciones">
+    <p:commandButton icon="pi pi-trash" 
+                     update="@form"
+                     action="#{categoriaBean.eliminar(cat)}" 
+                     styleClass="p-button-danger p-button-sm" 
+                     onclick="return confirm('¿Estás seguro de eliminar esta categoría?');" immediate="true" />
+</p:column>
+
+            </p:dataTable>
+        </p:panel>
+    </h:form>
+</h:body>
+</html>
+
+

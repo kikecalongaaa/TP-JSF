@@ -34,13 +34,13 @@ public class LoginBean implements Serializable {
             try {
                 switch (rol) {
                     case 1:
-                        FacesContext.getCurrentInstance().getExternalContext().redirect("admin.xhtml");
+                        FacesContext.getCurrentInstance().getExternalContext().redirect("admenu.xhtml");
                         break;
                     case 2:
-                        FacesContext.getCurrentInstance().getExternalContext().redirect("tecnico.xhtml");
+                        FacesContext.getCurrentInstance().getExternalContext().redirect("Menu.xhtml");
                         break;
                     case 3:
-                        FacesContext.getCurrentInstance().getExternalContext().redirect("usuario.xhtml");
+                        FacesContext.getCurrentInstance().getExternalContext().redirect("usumenu.xhtml");
                         break;
                     default:
                         mostrarError("Rol no reconocido.");
@@ -52,6 +52,8 @@ public class LoginBean implements Serializable {
         } else {
             mostrarError("Credenciales inválidas.");
         }
+        
+
     }
 
     private void mostrarError(String mensaje) {
@@ -65,4 +67,5 @@ public class LoginBean implements Serializable {
 
     public String getContrasena() { return contrasena; }
     public void setContrasena(String contrasena) { this.contrasena = contrasena; }
+  
 }

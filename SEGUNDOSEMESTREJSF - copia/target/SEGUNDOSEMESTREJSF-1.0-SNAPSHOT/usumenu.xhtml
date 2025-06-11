@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="jakarta.faces.core">
+<h:head>
+    <title>Menú Usuario</title>
+</h:head>
+<h:body>
+
+
+    <h:form>
+        <p:panel header="Menú Usuario" style="width: 400px; margin: auto; text-align: center;">
+            <p:messages showDetail="true" closable="true"/>
+
+            <p:commandButton value="Crear Ticket" action="#{menuBean.irCrearTicket}" icon="pi pi-plus-circle" styleClass="p-button-success" style="margin: 10px; width: 90%;" />
+            <p:separator />
+            <p:commandButton value="Ver Mis Tickets" action="#{menuBean.irVerTickets}" icon="pi pi-list" styleClass="p-button-info" style="margin: 10px; width: 90%;" />
+            <p:separator />
+            <p:commandButton value="Cerrar Sesión" action="#{menuBean.cerrarSesion}" icon="pi pi-sign-out" styleClass="p-button-danger" style="margin: 10px; width: 90%;" />
+
+        </p:panel>
+    </h:form>
+
+</h:body>
+</html>
+
