@@ -28,9 +28,10 @@ public class MenuBean implements Serializable {
     }
 
     public String irVerTickets() {
-        return "ver_tickets.xhtml?faces-redirect=true";
+        return "mis_tickets.xhtml?faces-redirect=true";
     }
 
+    
     public String irUsuarios() {
         return "crearUsuario.xhtml?faces-redirect=true";
     }

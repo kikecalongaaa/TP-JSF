@@ -64,6 +64,9 @@ public class LoginBean implements Serializable {
     // Getters y setters
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
+public Usuario getUsuarioLogueado() {
+    return usuarioLogueado;
+}
 
     public String getContrasena() { return contrasena; }
     public void setContrasena(String contrasena) { this.contrasena = contrasena; }

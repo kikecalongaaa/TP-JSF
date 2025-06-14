@@ -12,11 +12,19 @@
 
     <h:form>
         <p:panel header="Menú Administrador" style="width: 400px; margin: auto; text-align: center;">
+            
+            <h:outputText value="Bienvenido, #{loginBean.usuarioLogueado.nombreUsuario}" />
+
             <p:messages showDetail="true" closable="true"/>
 
-            <p:commandButton value="Crear Ticket" action="#{menuBean.irCrearTicket}" icon="pi pi-plus-circle" styleClass="p-button-success" style="margin: 10px; width: 90%;" />
+            <p:commandButton value="Crear Ticket" action="crear_ticket_admin.xhtml?faces-redirect=true" icon="pi pi-plus-circle" styleClass="p-button-success" style="margin: 10px; width: 90%;" />
             <p:separator />
-            <p:commandButton value="Ver Tickets" action="#{menuBean.irVerTickets}" icon="pi pi-list" styleClass="p-button-info" style="margin: 10px; width: 90%;" />
+            <p:commandButton value="Ver Todos los Tickets" 
+                action="ticketsTecnicos_adm.xhtml?faces-redirect=true" 
+                 icon="pi pi-ticket"
+                 rendered="#{loginBean.usuarioLogueado.rolId == 1 or loginBean.usuarioLogueado.rolId == 2}" styleClass="p-button-success" style="margin: 10px; width: 90%;" />
+            
+          
             <p:separator />
             <p:commandButton value="Usuarios" action="#{menuBean.irUsuarios}" icon="pi pi-users" styleClass="p-button-warning" style="margin: 10px; width: 90%;" />
             <p:separator />

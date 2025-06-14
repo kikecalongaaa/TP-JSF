@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Mis Tickets</title>
+</h:head>
+
+<h:body>
+    <h:form>
+        <p:growl id="mensajes" showDetail="true" />
+
+        <p:panel header="Mis Tickets" style="margin:20px;">
+            <p:dataTable var="ticket" value="#{listarTicketsUsuarioBean.tickets}" 
+                         paginator="true" rows="10">
+                
+                <p:column headerText="ID">
+                    <h:outputText value="#{ticket.idTicket}" />
+                </p:column>
+
+                <p:column headerText="Título">
+                    <h:outputText value="#{ticket.titulo}" />
+                </p:column>
+
+                <p:column headerText="Descripción">
+                    <h:outputText value="#{ticket.descripcion}" />
+                </p:column>
+
+                <p:column headerText="Fecha">
+                    <h:outputText value="#{ticket.fechaCreacion}" />
+                </p:column>
+
+                <p:column headerText="Estado">
+                    <h:outputText value="#{ticket.estadoNombre}" />
+                </p:column>
+
+                <p:column headerText="Categoría">
+                    <h:outputText value="#{ticket.categoriaNombre}" />
+                </p:column>
+
+                <p:column headerText="Prioridad">
+                    <h:outputText value="#{ticket.prioridad}" />
+                </p:column>
+
+                <p:column headerText="Acciones">
+                    <p:commandButton value="Ver Detalles" icon="pi pi-eye" 
+                                     action="#{listarTicketsUsuarioBean.verDetalles(ticket)}"
+                                     update=":dialogDetalles" oncomplete="PF('detallesDialog').show()" />
+                </p:column>
+            </p:dataTable>
+        </p:panel>
+
+        <p:dialog header="Detalles del Ticket" widgetVar="detallesDialog" modal="true" id="dialogDetalles" resizable="false" width="500">
+            <h:panelGrid columns="2" cellpadding="5">
+                <h:outputLabel value="Título:" />
+                <h:outputText value="#{listarTicketsUsuarioBean.ticketSeleccionado.titulo}" />
+
+                <h:outputLabel value="Descripción:" />
+                <h:outputText value="#{listarTicketsUsuarioBean.ticketSeleccionado.descripcion}" />
+
+                <h:outputLabel value="Fecha de Creación:" />
+                <h:outputText value="#{listarTicketsUsuarioBean.ticketSeleccionado.fechaCreacion}" />
+
+                <h:outputLabel value="Estado:" />
+                <h:outputText value="#{listarTicketsUsuarioBean.ticketSeleccionado.estadoNombre}" />
+
+                <h:outputLabel value="Categoría:" />
+                <h:outputText value="#{listarTicketsUsuarioBean.ticketSeleccionado.categoriaNombre}" />
+
+                <h:outputLabel value="Prioridad:" />
+                <h:outputText value="#{listarTicketsUsuarioBean.ticketSeleccionado.prioridad}" />
+            </h:panelGrid>
+        </p:dialog>
+    </h:form>
+</h:body>
+</html>
+

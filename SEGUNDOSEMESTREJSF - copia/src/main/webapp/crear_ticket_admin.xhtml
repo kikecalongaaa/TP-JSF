@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Crear Ticket</title>
+</h:head>
+<h:body style="background-color:#f0f0f0">
+    <h:form>
+        <p:panel header="Nuevo Ticket" style="width: 500px; margin: 50px auto;">
+            <p:messages closable="true"/>
+
+            <p:outputLabel value="Título:" for="titulo"/>
+            <p:inputText id="titulo" value="#{ticketBean.ticket.titulo}" required="true" style="width: 100%"/>
+
+            <p:outputLabel value="Descripción:" for="descripcion"/>
+            <p:inputTextarea id="descripcion" value="#{ticketBean.ticket.descripcion}" autoResize="true" required="true" style="width: 100%"/>
+
+            <p:outputLabel value="Categoría:" for="categoria"/>
+            <p:selectOneMenu id="categoria" value="#{ticketBean.ticket.categoriaId}" required="true" style="width: 100%">
+                <f:selectItem itemLabel="Seleccione una categoría" itemValue="" noSelectionOption="true"/>
+                <f:selectItems value="#{ticketBean.categorias}" var="cat" itemValue="#{cat.idCategoria}" itemLabel="#{cat.nombreCategoria}"/>
+            </p:selectOneMenu>
+
+            <p:outputLabel value="Prioridad:" for="prioridad"/>
+            <p:selectOneMenu id="prioridad" value="#{ticketBean.ticket.prioridad}" required="true" style="width: 100%">
+                <f:selectItem itemLabel="Baja" itemValue="Baja"/>
+                <f:selectItem itemLabel="Media" itemValue="Media"/>
+                <f:selectItem itemLabel="Alta" itemValue="Alta"/>
+            </p:selectOneMenu>
+
+            <p:commandButton value="Crear Ticket" action="#{ticketBean.crearTicket}" update="@form" icon="pi pi-check" style="margin-top:15px; width: 100%"/>
+            <p:separator/>
+            <p:commandButton value="Volver" action="admenu.xhtml?faces-redirect=true" immediate="true" icon="pi pi-sign-out" style="width: 100%;" />
+        </p:panel>
+    </h:form>
+</h:body>
+</html>

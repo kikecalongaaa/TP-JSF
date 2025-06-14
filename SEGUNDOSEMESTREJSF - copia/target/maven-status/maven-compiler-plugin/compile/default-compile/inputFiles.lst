@@ -1,9 +1,17 @@
 C:\Users\enriq\Downloads\TP-JSF\SEGUNDOSEMESTREJSF - copia\src\main\java\com\mycompany\bean\CategoriaBean.java
+C:\Users\enriq\Downloads\TP-JSF\SEGUNDOSEMESTREJSF - copia\src\main\java\com\mycompany\bean\ListarTicketsUsuarioBean.java
 C:\Users\enriq\Downloads\TP-JSF\SEGUNDOSEMESTREJSF - copia\src\main\java\com\mycompany\bean\LoginBean.java
 C:\Users\enriq\Downloads\TP-JSF\SEGUNDOSEMESTREJSF - copia\src\main\java\com\mycompany\bean\MenuBean.java
+C:\Users\enriq\Downloads\TP-JSF\SEGUNDOSEMESTREJSF - copia\src\main\java\com\mycompany\bean\MisTicketsBean.java
+C:\Users\enriq\Downloads\TP-JSF\SEGUNDOSEMESTREJSF - copia\src\main\java\com\mycompany\bean\TicketBean.java
+C:\Users\enriq\Downloads\TP-JSF\SEGUNDOSEMESTREJSF - copia\src\main\java\com\mycompany\bean\TicketsTecnicosBean.java
 C:\Users\enriq\Downloads\TP-JSF\SEGUNDOSEMESTREJSF - copia\src\main\java\com\mycompany\bean\UsuarioBean.java
 C:\Users\enriq\Downloads\TP-JSF\SEGUNDOSEMESTREJSF - copia\src\main\java\com\mycompany\dao\CategoriaDAO.java
+C:\Users\enriq\Downloads\TP-JSF\SEGUNDOSEMESTREJSF - copia\src\main\java\com\mycompany\dao\ListarTicketsUsuarioDAO.java
+C:\Users\enriq\Downloads\TP-JSF\SEGUNDOSEMESTREJSF - copia\src\main\java\com\mycompany\dao\TicketDAO.java
 C:\Users\enriq\Downloads\TP-JSF\SEGUNDOSEMESTREJSF - copia\src\main\java\com\mycompany\dao\UsuarioDAO.java
 C:\Users\enriq\Downloads\TP-JSF\SEGUNDOSEMESTREJSF - copia\src\main\java\com\mycompany\model\Categoria.java
 C:\Users\enriq\Downloads\TP-JSF\SEGUNDOSEMESTREJSF - copia\src\main\java\com\mycompany\model\Rol.java
+C:\Users\enriq\Downloads\TP-JSF\SEGUNDOSEMESTREJSF - copia\src\main\java\com\mycompany\model\Ticket.java
+C:\Users\enriq\Downloads\TP-JSF\SEGUNDOSEMESTREJSF - copia\src\main\java\com\mycompany\model\TicketUsuario.java
 C:\Users\enriq\Downloads\TP-JSF\SEGUNDOSEMESTREJSF - copia\src\main\java\com\mycompany\model\Usuario.java

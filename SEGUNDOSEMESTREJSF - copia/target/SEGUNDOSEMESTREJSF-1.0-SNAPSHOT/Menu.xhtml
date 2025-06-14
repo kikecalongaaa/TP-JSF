@@ -14,7 +14,10 @@
         <p:panel header="Menú Principal" style="width: 400px; margin: auto; text-align: center;">
             <p:messages showDetail="true" closable="true"/>
 
-            <p:commandButton value="Ver Tickets" action="#{menuBean.irVerTickets}" icon="pi pi-list" styleClass="p-button-info" style="margin: 10px; width: 90%;" />
+             <p:commandButton value="Ver Todos los Tickets" 
+                action="ticketsTecnicos.xhtml?faces-redirect=true" 
+                 icon="pi pi-ticket"
+                 rendered="#{loginBean.usuarioLogueado.rolId == 1 or loginBean.usuarioLogueado.rolId == 2}" styleClass="p-button-success" style="margin: 10px; width: 90%;" />
             <p:separator />
             <p:commandButton value="Cerrar Sesión" action="#{menuBean.cerrarSesion}" icon="pi pi-sign-out" styleClass="p-button-danger" style="margin: 10px; width: 90%;" />
         </p:panel>

@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Mis Tickets</title>
+</h:head>
+<h:body style="background-color:#f8f9fa; padding: 20px;">
+    <f:event type="preRenderView" listener="#{misTicketsBean.cargarTickets}" />
+    <h:form>
+        <p:panel header="Mis Tickets" style="width: 800px; margin: 50px auto;">
+            <p:messages closable="true"/>
+
+            <p:dataTable value="#{misTicketsBean.listaTickets}" var="ticket"
+                         rows="10" paginator="true" paginatorPosition="bottom" style="width:100%">
+
+                <p:column headerText="ID">
+                    <h:outputText value="#{ticket.idTicket}" />
+                </p:column>
+
+                <p:column headerText="Título">
+                    <h:outputText value="#{ticket.titulo}" />
+                </p:column>
+
+                <p:column headerText="Fecha">
+                    <h:outputText value="#{ticket.fechaCreacion}" />
+                </p:column>
+
+                <p:column headerText="Prioridad">
+                    <h:outputText value="#{ticket.prioridad}" />
+                </p:column>
+
+                <p:column headerText="Estado">
+                    <h:outputText value="#{misTicketsBean.nombreEstado(ticket.estadoId)}" />
+                </p:column>
+
+                <p:column headerText="Acciones" style="text-align:right">
+                    <p:commandButton value="Ver Ticket" 
+                                     action="#{misTicketsBean.verTicket(ticket)}"
+                                     update="@form"
+                                     icon="pi pi-eye"
+                                     styleClass="p-button-info p-button-sm" />
+                </p:column>
+
+            </p:dataTable>
+
+            <p:separator/>
+            <p:commandButton value="Volver al Menú" action="#{misTicketsBean.volverMenu}" icon="pi pi-arrow-left" style="width:100%" />
+        </p:panel>
+    </h:form>
+</h:body>
+</html>
